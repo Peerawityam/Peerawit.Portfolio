@@ -12,7 +12,7 @@ html, body {
 
 body {
   background-attachment: fixed; /*ทำให้ภาพพื้นหลังอยู่กับที่ */
-  background: url(9070018.jpg) no-repeat center center;
+  background: url(/picture/9070018.jpg) no-repeat center center;
   background-size: cover;       /* คลุมทั้งหน้าจอ */
   background-attachment: fixed; /* ให้ภาพอยู่กับที่เวลาเลื่อน */
   font-family: "Open Sans", sans-serif;
@@ -116,53 +116,6 @@ img {
   }
 }
 
-.resume {
-  width: 70%;
-  margin: 150px auto;
-  padding: 50px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(30px);
-  border-radius: 20px;
-  color: #fff;
-  text-align: center;
-
-  opacity: 0;
-  animation: slideTop .6s ease forwards;
-  animation-delay: 0.3s;
-}
-
-.resume h2 {
-  font-size: 2.7rem;
-  margin-bottom: 30px;
-  color: #f1c40f;
-  position: relative;
-  display: inline-block;
-
-  opacity: 0;
-  animation: slideTop .6s ease forwards;
-  animation-delay: 0.3s;
-}
-
-.resume h2::after {
-  content: "";
-  width: 100px;
-  height: 3px;
-  background: #f1c40f;
-  display: block;
-  margin: 8px auto 0;
-  border-radius: 3px;
-}
-
-.resume-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-  margin-top: 20px;
-
-  opacity: 0;
-  animation: slideTop .5s ease forwards;
-  animation-delay: 0.3s;
-}
 
 .resume-image img {
   width: 90%;
@@ -170,6 +123,185 @@ img {
   object-fit: cover;
   margin-top: 30px;
 }
+
+/* --- LAYOUT --- */
+.container {
+  max-width: 1000px;
+  margin: 120px auto;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  border-radius: 20px;
+  /* Sidebar | Main Content */
+}
+
+a {
+  text-decoration: none;
+  color: #00bfff;
+}
+/* --- SIDEBAR (LEFT) --- */
+.sidebar {
+  background-color: #1e2a3a;
+  /* Dark Blue/Grey */
+  color: #fff;
+  padding: 30px;
+  text-align: left;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  background-color: #ddd;
+  /* Placeholder for image */
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+  display: block;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+
+.sidebar h2 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #00bfff;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-info {
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  word-break: break-all;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: #00bfff;
+}
+
+.skills-list,
+.hobbies-list {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.skills-list li,
+.hobbies-list li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.tag {
+  display: inline-block;
+  background: #2c3e50;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+  border: 1px solid #00bfff;
+}
+
+/* --- MAIN CONTENT (RIGHT) --- */
+.main-content {
+  padding: 40px;
+}
+
+.header-name {
+  margin-bottom: 40px;
+}
+
+.header-name h1 {
+  font-size: 2.5rem;
+  color: #1e2a3a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.header-name span {
+  font-size: 1.2rem;
+  color: #00bfff;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  color: #1e2a3a;
+  border-left: 5px solid #00bfff;
+  padding-left: 15px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.job-item,
+.edu-item,
+.project-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.job-item:last-child,
+.edu-item:last-child {
+  border-bottom: none;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 5px;
+}
+
+.item-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.item-date {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.item-subtitle {
+  font-size: 1rem;
+  color: rgb(0, 49, 163);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.item-desc {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.cert-item {
+  background: #f9f9f9;
+  padding: 10px;
+  border-left: 3px solid #ccc;
+  font-size: 0.9rem;
+}
+
 
 /* Footer */
 .footer {
@@ -205,6 +337,35 @@ img {
 .footer p {
   font-size: 0.9rem;
   opacity: 0.7;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    /* Stack into 1 column */
+    margin: 100px auto;
+    box-shadow: none;
+  }
+
+  .sidebar {
+    text-align: center;
+  }
+
+  .sidebar h2 {
+    text-align: center;
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration-color: #00bfff;
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .item-header {
+    flex-direction: column;
+  }
 }
 
 @keyframes slideTop {

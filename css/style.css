@@ -13,7 +13,7 @@ html, body {
 
 body {
   background-attachment: fixed; /*ทำให้ภาพพื้นหลังอยู่กับที่ */
-  background: url(9070018.jpg) no-repeat center center;
+  background: url(/picture/9070018.jpg) no-repeat center center;
   background-size: cover;       /* คลุมทั้งหน้าจอ */
   background-attachment: fixed; /* ให้ภาพอยู่กับที่เวลาเลื่อน */
   font-family: "Open Sans", sans-serif;
@@ -449,25 +449,6 @@ img {
   }
 }
 
-/* .btn {
-  display: inline-block;
-  padding: 12px 28px;
-  background: #f1c40f;
-  color: #000;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-} */
-
-/* .btn:hover {
-  background: #d4ac0d;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-} */
-
 /* ===== Skills Section ===== */
 .skills {
   padding: 60px 10%;
@@ -542,6 +523,19 @@ img {
   background: rgba(255, 255, 255, 0.15);
   border-color: #9d4edd;
   box-shadow: 0 8px 25px rgba(157, 78, 221, 0.4);
+}
+
+.skill-icon {
+  font-size: 45px;          /* ขนาดไอคอนใหญ่สวย */
+  color: #f1c40f;           /* สีเหลืองตามธีม */
+  margin-bottom: 15px;      /* ระยะห่างกับหัวข้อ */
+  transition: 0.3s;
+}
+
+/* เวลา hover เปลี่ยนสีไอคอน */
+.skills-box:hover .skill-icon {
+  color: #9d4edd;           /* สีม่วงตอน hover */
+  transform: scale(1.1);    /* ขยายเล็กน้อย */
 }
 
 

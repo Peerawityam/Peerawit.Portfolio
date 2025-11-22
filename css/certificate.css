@@ -12,7 +12,7 @@ html, body {
 
 body {
   background-attachment: fixed; /*ทำให้ภาพพื้นหลังอยู่กับที่ */
-  background: url(9070018.jpg) no-repeat center center;
+  background: url(/picture/9070018.jpg) no-repeat center center;
   background-size: cover;       /* คลุมทั้งหน้าจอ */
   background-attachment: fixed; /* ให้ภาพอยู่กับที่เวลาเลื่อน */
   font-family: "Open Sans", sans-serif;
@@ -156,26 +156,114 @@ img {
 
 .certificate-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
 
   opacity: 0;
   animation: slideTop .6s ease forwards;
   animation-delay: 1s;
 }
 
-.certificate-box {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  padding: 15px;
-  transition: transform 0.3s ease;
+.certificate-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3 ease, box-shadow 0.3s ease;
 }
 
-.certificate-image img {
-  width: 50%;
-  border-radius: 10px;
-  object-fit: cover;
-  margin-top: 30px;
+.certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ส่วนแสดงรูปภาพ (Thumbnail) */
+.card-thumbnail {
+  width: 100%;
+  height: 270px; /* ความสูง 270px เพื่อให้เท่ากับ Credly Badge */
+  background-color: #55595c; /* สีเทาเผื่อรูปโหลดไม่ติด */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ให้รูปเต็มกรอบโดยไม่เสียสัดส่วน */
+  transition: transform 0.5s ease;
+  margin-top: 0; /* ลบค่าเดิม */
+  border-radius: 0; /* ลบค่าเดิม */
+}
+
+.certificate-card:hover {
+  transform: scale(1.1); /* ซูมรูปนิดนึงตอนชี้ */
+}
+
+/* ส่วนเนื้อหา Body (ปุ่มกด) */
+.card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.2); /* พื้นหลังส่วนล่างเข้มขึ้นนิดหน่อย */
+  margin-top: auto; /* ดันส่วนนี้ไปล่างสุดเสมอ */
+}
+
+/* จัดการปุ่มและ Text ด้านล่าง */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.btn-group {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-view {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 5px 15px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-view:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.text-muted {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+/* --- ส่วนเสริมสำหรับ Credly Embed --- */
+.card-embed-wrapper {
+    width: 100%;
+    height: 270px; /* เท่ากับ thumbnail */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9); /* พื้นหลังขาวจางๆ เพื่อให้อ่าน Badge ง่าย */
+    padding: 10px 0;
+}
+
+/* ป้องกัน iframe ล้นจอในมือถือ */
+.card-embed-wrapper iframe {
+    max-width: 100% !important;
 }
 
 /* Footer */
