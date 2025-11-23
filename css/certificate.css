@@ -12,7 +12,7 @@ html, body {
 
 body {
   background-attachment: fixed; /*ทำให้ภาพพื้นหลังอยู่กับที่ */
-  background: url("../picture/9070018.jpg") no-repeat center center;
+  background: url(../picture/9070018.jpg) no-repeat center center;
   background-size: cover;       /* คลุมทั้งหน้าจอ */
   background-attachment: fixed; /* ให้ภาพอยู่กับที่เวลาเลื่อน */
   font-family: "Open Sans", sans-serif;
